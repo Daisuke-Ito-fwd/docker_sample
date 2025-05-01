@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  ubuntu_fwd:
+    image: ubuntu:latest
+    container_name: ubuntu_fwd
+    working_dir: /mnt/docker_sample
+    privileged: true
+    volumes:
+      - ./docker_sample:/mnt/docker_sample:delegated
+    ports:
+    # ホストのポート3001をコンテナのポート3001にマッピング
+      - "3001:3001"

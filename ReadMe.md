@@ -14,15 +14,7 @@ header: "Docker Hands-on Guide"
   (DockerDesktopを使用する場合は、Dockerコンテナを起動する必要はありません ※業務使用は条件次第で有償)
 - Gitリポジトリのクローン
 - Dockerfileを作成
-- Dockerイメージを作成
-- Dockerコンテナを作成
-- Dockerコンテナを起動
-    - Dockerコンテナにアクセス
-    - Flaskアプリを起動
-    - Flaskアプリにアクセス
-- Dockerコンテナを停止
-- Dockerコンテナを削除
-- Dockerイメージを削除
+- Dockerコンテナの各種操作
 
 ---
 
@@ -30,24 +22,19 @@ header: "Docker Hands-on Guide"
 自身のPC内で任意の場所にリポジトリを作成してください。
 ```bash
 $ git clone https://github.com/Daisuke-Ito-fwd/docker_sample.git
+
+// WSLにGitがない場合
+$ sudo apt update
+$ sudo apt install git
+$ git config --global user.name "Your Name"
+$ git config --global user.email "
+
 ```
 
 ---
 
 ## ディレクトリ構成
-```
-docker_sample/
-├── app/
-│   ├── __init__.py
-│   ├── routes.py
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── ReadMe.md
-```
-
----
-## ここから先は WSL(Ubuntu)での操作となります。
+### ここから先は WSL(Ubuntu)での操作となります。
 (Macの場合はUbuntuコンテナ内)
 ```
 Windows
@@ -147,7 +134,7 @@ Mac
    ```bash
    $ docker stop docker_sample
    ```
-
+---
 3. コンテナを削除
    ```bash
    $ docker rm docker_sample

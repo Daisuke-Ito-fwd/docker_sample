@@ -144,3 +144,17 @@ Mac
    ```bash
    $ docker rmi <image_id>
    ```
+
+---
+## Docker関連 VSCodeの便利拡張機能
+- Docker
+- Remote - WSL
+- Remote - Containers
+- Remote - SSH
+
+---
+## その他 VSCodeの便利拡張機能
+- Git Graph
+- GitHub Copilot
+- GitHub Pull Requests and Issues
+- Marp for VS Code

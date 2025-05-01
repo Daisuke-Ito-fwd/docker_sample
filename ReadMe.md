@@ -26,8 +26,8 @@ $ git clone https://github.com/Daisuke-Ito-fwd/docker_sample.git
 // WSLにGitがない場合
 $ sudo apt update
 $ sudo apt install git
-$ git config --global user.name "Your Name"
-$ git config --global user.email "
+$ git config user.name "Your Name"
+$ git config user.email "sample@example.com"
 
 ```
 

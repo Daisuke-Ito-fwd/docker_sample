@@ -74,7 +74,7 @@ Mac
    $ sudo sh get-docker.sh
    ```
 
-2. Dockerデーモンを起動
+2. Dockerデーモンをバックグラウンドで起動
    ```bash
    $ dockerd &
    ```
@@ -90,9 +90,9 @@ Mac
    /mnt/docker_sample
    ```
 
-2. イメージをビルド
+2. イメージをビルド Dockerfile.devを使用します
    ```bash
-   $ docker build -t docker_sample .
+   $ docker build -t docker_dev -f Dockerfile.dev .
    ```
 
 3. 接続エラー時の対処
@@ -103,15 +103,13 @@ Mac
 
 ---
 
-## コンテナの作成 & 起動
+## コンテナの作成 & 起動 (開発環境)
 
 1. コンテナを作成・起動
    ```bash
    $ pwd
    /mnt/docker_sample
-   $ docker run -dit --name docker_sample \
-       -p 3001:3001 \
-       -v src:/mnt/src docker_sample
+   $ docker run -dit --name docker_dev -p 3001:3001 -v src:/mnt/src docker_dev
    ```
 2. ブラウザでアクセス
    - http://localhost:3001
@@ -121,13 +119,13 @@ Mac
 ## コンテナ操作
 0. コンテナの状態を確認・起動
    ```bash
-   $ docker ps
-   $ docker start docker_sample
+   $ docker ps -a
+   $ docker start docker_dev
    ```
 
 1. コンテナにアクセス
    ```bash
-   $ docker exec -it docker_sample /bin/bash
+   $ docker exec -it docker_dev /bin/bash
    ```
 
 2. コンテナを停止
@@ -145,6 +143,22 @@ Mac
    $ docker rmi <image_id>
    ```
 
+---
+## Dockerビルド(本番向け) Flask + Gunicorn + Nginx
+1. Dockerfileをビルド
+   ```bash
+   $ docker build -t docker_prod -f Dockerfile.prd .
+   ```
+2. コンテナを作成・起動
+   ```bash
+   $ docker run -dit --name docker_prod -p 3001:3001 -v src:/mnt/src docker_prod
+   ```
+3. ブラウザでアクセス
+   - http://localhost:3001
+4. コンテナにアクセス
+   ```bash
+   $ docker exec -it docker_prod /bin/bash
+   ```
 ---
 ## Docker関連 VSCodeの便利拡張機能
 - Docker

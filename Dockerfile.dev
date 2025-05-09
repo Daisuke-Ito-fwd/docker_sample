@@ -1,0 +1,22 @@
+FROM python:3.9-slim
+# Dockerfile for Flask Application development
+
+# Flask用の作業ディレクトリを設定
+WORKDIR /app
+
+# 必要なファイルをコピーして依存関係をインストール
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# ホストOS側のファイルをコンテナにコピー
+COPY --chown=root:root . .
+
+# top実行用モジュールのインストール
+RUN apt update && apt install -y procps
+
+# Flaskアプリケーションの設定を行う
+ENV FLASK_APP=app
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=3001
+
+CMD ["flask", "run"]

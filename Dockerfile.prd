@@ -1,0 +1,31 @@
+# Dockerfile for Flask Application development
+FROM python:3.9-slim
+
+# Flask用の作業ディレクトリを設定
+WORKDIR /app
+
+# 必要なファイルをコピーして依存関係をインストール
+COPY requirements.txt requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+# Gunicornをインストール
+RUN pip install gunicorn
+
+# hostOS側のファイルをコンテナにコピー
+COPY --chown=root:root . .
+
+# top実行用モジュールのインストール
+RUN apt update && apt install -y procps
+
+# 環境変数を設定
+ENV FLASK_APP=app
+ENV FLASK_RUN_HOST=0.0.0.0
+ENV FLASK_RUN_PORT=3001
+
+# Nginxのインストール
+RUN apt-get update && apt-get install -y nginx && apt-get clean
+
+# Nginxの設定ファイルをコピー
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# FlaskアプリケーションをGunicornで起動
+CMD ["sh", "-c", "service nginx start && gunicorn -w 4 -b 0.0.0.0:3001 app:app"]

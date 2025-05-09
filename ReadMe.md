@@ -38,28 +38,30 @@ $ git config user.email "sample@example.com"
 (Macの場合はUbuntuコンテナ内)
 ```
 Windows
-└─ WSL Ubuntu
-    └─ docker_sample/
-        ├─ app/
-        ├─ sh/
-        ├─ forMac/
-        ├─ Dockerfile
-        ├─ docker-compose.yml
-        ├─ ReadMe.md
-        └─ requirements.txt
+└ 3001ポート ─ WSL Ubuntu
+               └─ docker_sample/
+                  ├─ app/ # Flaskアプリケーション
+                  ├─ sh/ # シェルスクリプト
+                  ├─ forMac/ # Mac用のDockerfile
+                  ├─ Dockerfile.dev # 開発環境用
+                  ├─ Dockerfile.prd # 本番環境用
+                  ├─ nginx.conf # Nginx設定ファイル
+                  ├─ ReadMe.md
+                  └─ requirements.txt # Python依存関係
 ```
 ---
 ```
 Mac
-└─ Ubuntu
-    └─ docker_sample/
-        ├─ app/
-        ├─ sh/
-        ├─ forMac/
-        ├─ Dockerfile
-        ├─ docker-compose.yml
-        ├─ ReadMe.md
-        └─ requirements.txt
+└ 3001ポート ─ Ubuntu
+               └─ docker_sample/
+                  ├─ app/
+                  ├─ sh/
+                  ├─ forMac/
+                  ├─ Dockerfile.dev
+                  ├─ Dockerfile.prd
+                  ├─ nginx.conf
+                  ├─ ReadMe.md
+                  └─ requirements.txt
 ```
 ---
 

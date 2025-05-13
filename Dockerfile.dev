@@ -1,4 +1,5 @@
 # Dockerfile for Flask Application development
+# Dockerhubからpython:3.9-slimをダウンロードしてベースイメージとして使用
 FROM python:3.9-slim
 
 # Flask用の作業ディレクトリを設定

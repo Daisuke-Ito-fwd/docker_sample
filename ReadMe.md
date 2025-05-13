@@ -13,6 +13,12 @@ header: "Docker Hands-on Guide"
 
 ---
 
+## Dockerは怖くない。
+## 好きに作って好きに壊せる、
+## とても便利なツールです。
+
+---
+
 ## 想定する環境
 - Windows + WSL(Ubuntu) + Docker
 - Mac + Docker(Ubuntu) + Docker
@@ -142,7 +148,7 @@ Mac
 
 ---
 
-## docker コマンドとdockerfileの解説
+## dockerコマンド の解説
 ```bash
 $ docker run -dit --name docker_dev -p 3001:3001 -v src:/mnt/src docker_dev
 ```
@@ -183,6 +189,11 @@ $ docker compose build
 $ docker compose up -d
 ```
 これだけで環境の構築と起動が可能。
+
+---
+
+## dockerfileについて
+### Dockerfile.devをご覧ください
 
 ---
 

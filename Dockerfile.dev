@@ -1,5 +1,5 @@
-FROM python:3.9-slim
 # Dockerfile for Flask Application development
+FROM python:3.9-slim
 
 # Flask用の作業ディレクトリを設定
 WORKDIR /app
@@ -19,4 +19,5 @@ ENV FLASK_APP=app
 ENV FLASK_RUN_HOST=0.0.0.0
 ENV FLASK_RUN_PORT=3001
 
+# コンテナ起動時に実行するコマンドを指定
 CMD ["flask", "run"]

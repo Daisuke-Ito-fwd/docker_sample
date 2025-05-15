@@ -16,5 +16,5 @@ RUN apt-get update && \
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
 
-# デフォルトでDockerデーモンを起動 これがないとコンテナがすぐに終了してしまう
+# Dockerデーモンを起動するスクリプトを実行
 CMD ["/usr/local/bin/start.sh"]

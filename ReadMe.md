@@ -23,7 +23,7 @@ header: "Docker Hands-on Guide"
 - Windows + WSL(Ubuntu) + Docker
 - Mac + Docker(Ubuntu) + Docker
 
-   DockerDesktopを使用する場合は、Dockerコンテナを起動する必要はありません 
+   DockerDesktopを使用する場合は、Dockerコンテナを起動する必要はありません
   <small>※業務使用は条件次第で有償</small>
 
 ---
@@ -123,7 +123,7 @@ Mac
 
 2. イメージをビルド Dockerfile.devを使用します
    ```bash
-   # -t タグオプション -f ファイル指定 
+   # -t タグオプション -f ファイル指定
    $ docker build -t docker_dev -f Dockerfile.dev .
    ```
 
@@ -201,7 +201,7 @@ $ docker compose up -d
 1. コンテナの状態を確認・起動
    ```bash
    $ docker ps -a
-   
+
    # docker start <container_id or container_name>
    $ docker start docker_dev
    ```
@@ -259,7 +259,7 @@ $ docker compose up -d
 
 ---
 
-## 質疑応答
+## まとめ & 質疑応答
 
 ---
 
